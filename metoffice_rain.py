@@ -25,4 +25,3 @@ def url_gen(delta_time): #return a URL and time if successful, or False if not
 	return (URL, default_time)
 
 
-print(url_gen(0))
