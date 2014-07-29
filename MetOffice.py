@@ -18,7 +18,7 @@ class MetOffice:
 		self.xml = data.decode('utf-8')
 		self.xml_time = datetime.datetime(int(default_time[:4]), int(default_time[5:7]), int(default_time[8:10]), int(default_time[11:13]), int(default_time[14:16]), int(default_time[17:19]))
 	
-	def url_gen(time, forecast): #Take a datetime for the desired time and a forecast type - 0 for rain, 1 for temperature
+	def url_gen(self, time, forecast): #Take a datetime for the desired time and a forecast type - 0 for rain, 1 for temperature
 		root = XMLParser.fromstring(self.xml)
 		
 		baseURL = root[0].text
