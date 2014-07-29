@@ -6,6 +6,8 @@ class MetOffice:
 		response = urllib.request.urlopen("http://datapoint.metoffice.gov.uk/public/data/layer/wxfcs/all/xml/capabilities?key={0}".format(constants.key))
 		data = response.read()
 		self.xml = data.decode('utf-8')
+		index = 1
+		root = XMLParser.fromstring(self.xml)
 		default_time = root[index][0][2].attrib['defaultTime']
 		self.xml_time = datetime.datetime(int(default_time[:4]), int(default_time[5:7]), int(default_time[8:10]), int(default_time[11:13]), int(default_time[14:16]), int(default_time[17:19]))
 		self.keys = [1, 4]
