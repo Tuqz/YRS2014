@@ -30,7 +30,7 @@ class MetOffice:
 		delta_time = (delta_time.days * 24) + (delta_time.seconds//3600)
 		if(delta_time < 0 or delta_time > 36):
 			return False
-		if(time % 3):
+		if(delta_time % 3):
 			lower = (delta_time//3)*3
 			upper = lower + 3
 			if(delta_time > (lower + upper)/2):
